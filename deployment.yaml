@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: serverless-m
-        image: quay.io/zt40/serverless-m:0.1
+        image: quay.io/zt40/serverless-m:0.2
         ports:
         - containerPort: 5110
         env:
