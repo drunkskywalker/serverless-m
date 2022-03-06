@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: serverless-m-deployment
+spec:
+  replicas: 
+  selector:
+    matchLabels:
+      app: serverless-m
+  template:
+    metadata:
+      labels:
+        app: serverless-m
+    spec:
+      containers:
+      - name: serverless-m
+        image: quay.io/zt40/serverless-m:0.1
+        ports:
+        - containerPort: 5110
+        env:
+        - name: REDIS_HOST
+          value: "152.3.65.126"
+        - name: REDIS_PORT
+          value: "6379"
+        - name: REDIS_INPUT_KEY
+          value: "metrics"
